@@ -1,8 +1,13 @@
+// @flow
+
+const p = s => new Promise(resolve => {
+  setTimeout(()=> resolve(s + " is async"), 500)
+})
+
 const tryAsync = async s => {
-  setTimeout(() => {
-    // await console.log(s + 'is await');
-  })
-  console.log(s + ' is async');
+  const pp = await p(s)
+  console.log("start");
+  console.log(pp);
 }
 
-tryAsync('this')
+tryAsync('this ')
