@@ -1,7 +1,9 @@
 // @flow
 
 const p = s => new Promise(resolve => {
-  setTimeout(()=> resolve(s + " is async"), 500)
+  setTimeout(()=> {
+    resolve(s + " is async")
+  }, 500)
 })
 
 const tryAsync = async s => {
