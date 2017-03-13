@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "echo $NPM_UPDATE",
     "start": "babel-node src/index.js",
     "build": "babel src -d lib",
     "babel": "babel"
