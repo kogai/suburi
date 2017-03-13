@@ -3,6 +3,7 @@
 # CIRCLECI_TOKEN
 # PROJECT
 # BRANCH
+# USERNAME
 # TRIGGER_NAME
 #
 # see app.json for details.
@@ -12,8 +13,8 @@ if [ -z "$CIRCLECI_TOKEN" ] ; then
     exit
 fi
 
-api_prefix=https://circleci.com/api/v1
-trigger_build_url="${api_prefix}/project/${PROJECT}/tree/${BRANCH}"
+api_prefix=https://circleci.com/api/v1.1
+trigger_build_url="${api_prefix}/project/github/${USERNAME}/${PROJECT}/tree/${BRANCH}"
 payload="{ \"build_parameters\": { \"${TRIGGER_NAME}\": \"true\" } }"
 
 echo "URL: ${trigger_build_url}"
