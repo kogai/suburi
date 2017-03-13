@@ -6,3 +6,12 @@ machine:
 dependencies:
   post:
     - $(npm bin)/ci-npm-update --execute
+
+deployment:
+  update-dependencies:
+    branch: master
+    commands:
+      - >
+        if [ -n "${NPM_UPDATE}" ] ; then
+          $(npm bin)/ci-npm-update --execute
+        fi
