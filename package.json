@@ -13,18 +13,18 @@
   "license": "ISC",
   "dependencies": {
     "flow": "^0.2.3",
-    "flow-bin": "^0.39.0",
-    "flowgen": "^1.0.1",
+    "flow-bin": "^0.41.0",
+    "flowgen": "^1.2.0",
     "next": "^1.2.3",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.23.0",
-    "babel-core": "^6.23.1",
-    "babel-loader": "^6.3.2",
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.0",
     "babel-plugin-transform-async-to-generator": "^6.22.0",
-    "@kogai/ci-npm-update": "^1.0.9",
-    "webpack": "^1.14.0"
+    "@kogai/ci-npm-update": "^1.10.0",
+    "webpack": "^2.2.1"
   }
 }
