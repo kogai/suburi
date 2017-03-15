@@ -1,15 +1,12 @@
 // @flow
 
-const p = s => new Promise(resolve => {
-  setTimeout(()=> {
-    resolve(s + " is async")
-  }, 500)
-})
+type Person = {
+  name: string;
+};
 
-const tryAsync = async s => {
-  const pp = await p(s)
-  console.log("start");
-  console.log(pp);
+function greet (person: Person): string {
+  return 'Hello ' + person.name;
 }
 
-tryAsync('this ')
+console.log(greet({name: 'Alice'}));
+console.log(greet({name: false}));
