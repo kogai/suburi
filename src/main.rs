@@ -1,18 +1,22 @@
+extern crate rand;
+
 use std::thread;
 use std::time::Duration;
-use std::sync::{Arc, Mutex};
+use std::sync::mpsc::channel;
 
 fn main() {
-    let xs = Arc::new(Mutex::new(vec![1, 2, 3]));
+    let (sender, reciever) = channel();
 
-    for i in 0..3 {
-        let xs_ref = xs.clone();
+    for i in 0..10 {
+        let sender = sender.clone();
         thread::spawn(move || {
-            let mut x = xs_ref.lock().unwrap();
-            x[0] += i;
+            let n = rand::random::<u8>();
+            thread::sleep(Duration::from_millis(n as u64));
+            sender.send((i, n)).unwrap();
         });
     }
 
-    println!("{:?}", xs);
-    thread::sleep(Duration::from_millis(50));
+    for r in reciever.into_iter() {
+        println!("thread number[{}] -> wait {} ms", r.0, r.1);
+    }
 }
