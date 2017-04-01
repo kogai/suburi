@@ -1,0 +1,8 @@
+[package]
+
+name = "hello_world"
+version = "0.0.1"
+authors = [ "kogai <kogai0121@gmail.com>" ]
+
+[dependencies]
+rand = "0.3"
