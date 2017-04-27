@@ -13,3 +13,4 @@ const tryAsync = async s => {
 }
 
 tryAsync('this')
+console.log('ok?');
