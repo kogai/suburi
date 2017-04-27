@@ -12,4 +12,4 @@ const tryAsync = async s => {
   console.log(pp);
 }
 
-tryAsync('this ')
+tryAsync('this')
